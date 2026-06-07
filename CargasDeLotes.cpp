@@ -11,6 +11,11 @@ void CargaLoteGenero()
 
 }
 
+void CargaLoteSuscriptores()
+{
+
+}
+
 void CargaLoteContenido(Contenido _contenidos[])
 {
     for(int x = 0 ; x < 15 ; x++)
@@ -163,10 +168,7 @@ void MostrarContenidoPrueba(Contenido _contenidos[])
     }
 
 }
-void CargaLoteSuscriptores()
-{
 
-}
 
 void CargaLoteReproducciones(Reproduccion _reproducion, Contenido _contenidos[])
 {
