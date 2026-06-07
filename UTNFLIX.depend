@@ -1,0 +1,226 @@
+# depslib dependency file v1.0
+1779592499 source:d:\tup programacion1\tpi\utnflix\main.cpp
+	<iostream>
+	"Funciones.h"
+
+1780197402 d:\tup programacion1\tpi\utnflix\funciones.h
+
+1780269274 source:d:\tup programacion1\tpi\utnflix\menu principal.cpp
+	<iostream>
+	"Funciones.h"
+
+1780269000 source:d:\tup programacion1\tpi\utnflix\tiposdedatoscreados.cpp
+	<iostream>
+	"Funciones.h"
+
+1780266831 source:d:\tup programacion1\tpi\utnflix\cargasdelotes.cpp
+	<iostream>
+	"Funciones.h"
+
+1780267471 source:d:\tup programacion1\tpi\utnflix\repactporplansuscripcion.cpp
+	<iostream>
+	"Funciones.h"
+
+1780267471 source:d:\tup programacion1\tpi\utnflix\repcontsinreprod.cpp
+	<iostream>
+	"Funciones.h"
+
+1780267471 source:d:\tup programacion1\tpi\utnflix\reprankingcontmasrep.cpp
+	<iostream>
+	"Funciones.h"
+
+1780267471 source:d:\tup programacion1\tpi\utnflix\reprepporgenydiasemana.cpp
+	<iostream>
+	"Funciones.h"
+
+1780267469 source:d:\tup programacion1\tpi\utnflix\reptop5subssorteoaccesoant.cpp
+	<iostream>
+	"Funciones.h"
+
+1780761963 source:c:\users\marco\onedrive\escritorio\tpi - programacion 1\utnflix v0.0.2\cargasdelotes.cpp
+	<iostream>
+	"Funciones.h"
+
+1780761601 c:\users\marco\onedrive\escritorio\tpi - programacion 1\utnflix v0.0.2\funciones.h
+
+1779592499 source:c:\users\marco\onedrive\escritorio\tpi - programacion 1\utnflix v0.0.2\main.cpp
+	<iostream>
+	"Funciones.h"
+
+1780267471 source:c:\users\marco\onedrive\escritorio\tpi - programacion 1\utnflix v0.0.2\repactporplansuscripcion.cpp
+	<iostream>
+	"Funciones.h"
+
+1780267471 source:c:\users\marco\onedrive\escritorio\tpi - programacion 1\utnflix v0.0.2\repcontsinreprod.cpp
+	<iostream>
+	"Funciones.h"
+
+1780267471 source:c:\users\marco\onedrive\escritorio\tpi - programacion 1\utnflix v0.0.2\reprankingcontmasrep.cpp
+	<iostream>
+	"Funciones.h"
+
+1780267471 source:c:\users\marco\onedrive\escritorio\tpi - programacion 1\utnflix v0.0.2\reprepporgenydiasemana.cpp
+	<iostream>
+	"Funciones.h"
+
+1780267469 source:c:\users\marco\onedrive\escritorio\tpi - programacion 1\utnflix v0.0.2\reptop5subssorteoaccesoant.cpp
+	<iostream>
+	"Funciones.h"
+
+1780769232 source:c:\users\marco\onedrive\escritorio\tpi - programacion 1\utnflix v0.0.2\menu principal.cpp
+	<iostream>
+	"Funciones.h"
+
+1780762006 source:c:\users\marco\onedrive\escritorio\tpi - programacion 1\utnflix v0.0.2\tiposdedatoscreados.cpp
+	<iostream>
+	"Funciones.h"
+
+1780761963 source:c:\users\marco\onedrive\escritorio\tpi - programacion 1\utnflix v0.0.3\cargasdelotes.cpp
+	<iostream>
+	"Funciones.h"
+
+1780761601 c:\users\marco\onedrive\escritorio\tpi - programacion 1\utnflix v0.0.3\funciones.h
+
+1780769232 source:c:\users\marco\onedrive\escritorio\tpi - programacion 1\utnflix v0.0.3\menu principal.cpp
+	<iostream>
+	"Funciones.h"
+
+1780267471 source:c:\users\marco\onedrive\escritorio\tpi - programacion 1\utnflix v0.0.3\repactporplansuscripcion.cpp
+	<iostream>
+	"Funciones.h"
+
+1780267471 source:c:\users\marco\onedrive\escritorio\tpi - programacion 1\utnflix v0.0.3\repcontsinreprod.cpp
+	<iostream>
+	"Funciones.h"
+
+1780267471 source:c:\users\marco\onedrive\escritorio\tpi - programacion 1\utnflix v0.0.3\reprankingcontmasrep.cpp
+	<iostream>
+	"Funciones.h"
+
+1780267471 source:c:\users\marco\onedrive\escritorio\tpi - programacion 1\utnflix v0.0.3\reprepporgenydiasemana.cpp
+	<iostream>
+	"Funciones.h"
+
+1780267469 source:c:\users\marco\onedrive\escritorio\tpi - programacion 1\utnflix v0.0.3\reptop5subssorteoaccesoant.cpp
+	<iostream>
+	"Funciones.h"
+
+1780762006 source:c:\users\marco\onedrive\escritorio\tpi - programacion 1\utnflix v0.0.3\tiposdedatoscreados.cpp
+	<iostream>
+	"Funciones.h"
+
+1780770420 source:c:\users\marco\onedrive\escritorio\tpi - programacion 1\utnflix v0.0.3\main.cpp
+	<iostream>
+	"Funciones.h"
+
+1780777197 source:c:\users\marco\downloads\utnflix v0.0.3\cargasdelotes.cpp
+	<iostream>
+	"Funciones.h"
+
+1780777180 c:\users\marco\downloads\utnflix v0.0.3\funciones.h
+	<string>
+
+1780776819 source:c:\users\marco\downloads\utnflix v0.0.3\main.cpp
+	<iostream>
+	"Funciones.h"
+
+1780777138 source:c:\users\marco\downloads\utnflix v0.0.3\menu principal.cpp
+	<iostream>
+	"Funciones.h"
+
+1780267471 source:c:\users\marco\downloads\utnflix v0.0.3\repactporplansuscripcion.cpp
+	<iostream>
+	"Funciones.h"
+
+1780267471 source:c:\users\marco\downloads\utnflix v0.0.3\repcontsinreprod.cpp
+	<iostream>
+	"Funciones.h"
+
+1780267471 source:c:\users\marco\downloads\utnflix v0.0.3\reprankingcontmasrep.cpp
+	<iostream>
+	"Funciones.h"
+
+1780267471 source:c:\users\marco\downloads\utnflix v0.0.3\reprepporgenydiasemana.cpp
+	<iostream>
+	"Funciones.h"
+
+1780267469 source:c:\users\marco\downloads\utnflix v0.0.3\reptop5subssorteoaccesoant.cpp
+	<iostream>
+	"Funciones.h"
+
+1780776652 source:c:\users\marco\downloads\utnflix v0.0.3\tiposdedatoscreados.cpp
+	<iostream>
+	"Funciones.h"
+
+1780863217 source:c:\users\marco\onedrive\escritorio\tpi - programacion 1\utnflix v0.0.4\cargasdelotes.cpp
+	<iostream>
+	"Funciones.h"
+	<stdio.h>
+
+1780860289 c:\users\marco\onedrive\escritorio\tpi - programacion 1\utnflix v0.0.4\funciones.h
+	<string>
+
+1780859981 source:c:\users\marco\onedrive\escritorio\tpi - programacion 1\utnflix v0.0.4\main.cpp
+	<iostream>
+	"Funciones.h"
+
+1780860297 source:c:\users\marco\onedrive\escritorio\tpi - programacion 1\utnflix v0.0.4\menu principal.cpp
+	<iostream>
+	"Funciones.h"
+
+1780267471 source:c:\users\marco\onedrive\escritorio\tpi - programacion 1\utnflix v0.0.4\repactporplansuscripcion.cpp
+	<iostream>
+	"Funciones.h"
+
+1780267471 source:c:\users\marco\onedrive\escritorio\tpi - programacion 1\utnflix v0.0.4\repcontsinreprod.cpp
+	<iostream>
+	"Funciones.h"
+
+1780267471 source:c:\users\marco\onedrive\escritorio\tpi - programacion 1\utnflix v0.0.4\reprankingcontmasrep.cpp
+	<iostream>
+	"Funciones.h"
+
+1780267471 source:c:\users\marco\onedrive\escritorio\tpi - programacion 1\utnflix v0.0.4\reprepporgenydiasemana.cpp
+	<iostream>
+	"Funciones.h"
+
+1780267469 source:c:\users\marco\onedrive\escritorio\tpi - programacion 1\utnflix v0.0.4\reptop5subssorteoaccesoant.cpp
+	<iostream>
+	"Funciones.h"
+
+1780863217 source:d:\tup programacion1\utnflix\cargasdelotes.cpp
+	<iostream>
+	"Funciones.h"
+	<stdio.h>
+
+1780860289 d:\tup programacion1\utnflix\funciones.h
+	<string>
+
+1780859981 source:d:\tup programacion1\utnflix\main.cpp
+	<iostream>
+	"Funciones.h"
+
+1780860297 source:d:\tup programacion1\utnflix\menu principal.cpp
+	<iostream>
+	"Funciones.h"
+
+1780267471 source:d:\tup programacion1\utnflix\repactporplansuscripcion.cpp
+	<iostream>
+	"Funciones.h"
+
+1780267471 source:d:\tup programacion1\utnflix\repcontsinreprod.cpp
+	<iostream>
+	"Funciones.h"
+
+1780267471 source:d:\tup programacion1\utnflix\reprankingcontmasrep.cpp
+	<iostream>
+	"Funciones.h"
+
+1780267471 source:d:\tup programacion1\utnflix\reprepporgenydiasemana.cpp
+	<iostream>
+	"Funciones.h"
+
+1780267469 source:d:\tup programacion1\utnflix\reptop5subssorteoaccesoant.cpp
+	<iostream>
+	"Funciones.h"
+
