@@ -5,52 +5,48 @@ using namespace std;
 
 //EN ESTE ARCHIVO VAMOS A TENER TODO LO RELACIONADO A LOS MENUS INTERACTIVOS
 
-void MenuPrincipal(Contenido _contenidos[],Reproduccion _reproducion)
+void MenuPrincipal(Genero _generos[],Contenido _contenidos[],Reproduccion _reproduccion, Suscriptor _suscriptores[],Reporte1ContMasRep _reporte1ContMasRep[],int reproduccionesPorPlan[],int totalDeReproducciones)
 {
 
     int opcion;
     do
-    { system("cls");
-        cout << "|========|=================================|" << endl;
-        cout << "| Opcion |       Bienvenido a UTNFLIX      |" << endl;
-        cout << "|========|=================================|" << endl;
-        cout << "|    1   | Iniciar                         |" << endl;
-        cout << "|--------|---------------------------------|" << endl;
-        cout << "|    2   | Creditos                        |" << endl;
-        cout << "|--------|---------------------------------|" << endl;
-        cout << "|    0   | Salir                           |" << endl;
-        cout << "|========|=================================|" << endl;
-        cout << "|========|=================================|" << endl;
-        cout << "|========|=================================|" << endl;
-        cout << "|--------|---------------------------------|" << endl;
-        cout << "|    3   | Mostrar Contenido (prueba)      |" << endl;
-        cout << "|========|=================================|" << endl;
-        cout << "  Opcion: ";
+    {
+        system("color 0C");
+        system("cls");
+        Logo(2);
+        cout << R"(
+        |========|=================================================|
+        | Opcion |              Bienvenido a UTNFLIX               |
+        |========|=================================================|
+        |    1   | Iniciar                                         |
+        |--------|-------------------------------------------------|
+        |    2   | Creditos                                        |
+        |--------|-------------------------------------------------|
+        |    0   | Salir                                           |
+        |========|=================================================|
+          Opcion: )";
         cin >> opcion;
+        system("color 0F");
         system("cls");
         if(opcion >= 1 && opcion <= 3)
         {
-            SelecMenuPrincipal(opcion, _contenidos,_reproducion);
+            SelecMenuPrincipal(opcion,_generos, _contenidos,_reproduccion, _suscriptores,_reporte1ContMasRep,reproduccionesPorPlan, totalDeReproducciones);
         }
 
     }
     while(opcion != 0);
 
-
 }
-void SelecMenuPrincipal(int opcion, Contenido _contenidos[],Reproduccion _reproducion)
+void SelecMenuPrincipal(int opcion,Genero _generos[], Contenido _contenidos[],Reproduccion _reproduccion, Suscriptor _suscriptores[],Reporte1ContMasRep _reporte1ContMasRep[],int reproduccionesPorPlan[], int totalDeReproducciones)
 {
 
     switch(opcion)
     {
     case 1:
-        MenuCargaLotes(_contenidos, _reproducion);
+        MenuCargaLotes(_generos,_contenidos, _reproduccion, _suscriptores,_reporte1ContMasRep, reproduccionesPorPlan, totalDeReproducciones);
         break;
     case 2:
         MostrarCreditos();
-        break;
-    case 3:
-        MostrarContenidoPrueba(_contenidos);
         break;
     }
 
@@ -63,22 +59,31 @@ void MostrarCreditos()
 
     int opcion;
     do
-    {   cout << "|========|=================================|" << endl;
-        cout << "| Legajo |             Creditos            |" << endl;
-        cout << "|========|=================================|" << endl;
-        cout << "|  34851 | Barrionuevo, Gabriel            |" << endl;
-        cout << "|--------|---------------------------------|" << endl;
-        cout << "|  24448 | Fernandez, Marcos               |" << endl;
-        cout << "|--------|---------------------------------|" << endl;
-        cout << "|  35025 | Tejada, Brian                   |" << endl;
-        cout << "|========|=================================|" << endl;
-        cout << endl;
-        cout << endl;
-        cout << "|========|=================================|" << endl;
-        cout << "|    0   | Atras                           |" << endl;
-        cout << "|========|=================================|" << endl;
+    {
+        system("color 0C");         // Color rojo UTNFlix
+        system("cls");      // Limpiar pantalla para aplicar el color
+        Logo(2);
+        cout << R"(
+        |========|=================================================|
+        | Legajo |                     Creditos                    |
+        |========|=================================================|
+        |  34851 | Barrionuevo, Gabriel                            |
+        |--------|-------------------------------------------------|
+        |  24448 | Fernandez, Marcos                               |
+        |--------|-------------------------------------------------|
+        |  35025 | Tejada, Brian                                   |
+        |========|=================================================|
+
+
+        |========|=================================================|
+        |    0   | Atras                                           |
+        |========|=================================================|
+          Opcion: )";
+
         cin >> opcion;
-        system("cls");
+
+        system("color 0F"); // Volver al blanco y negro clásico
+        system("cls");      // Limpiar la pantalla para el próximo menú
     }
     while(opcion != 0);
 
@@ -86,32 +91,54 @@ void MostrarCreditos()
 ///----------------------------------------------------------------------
 ///----------------------------------------------------------------------
 ///----------------------------------------------------------------------
-void MenuCargaLotes(Contenido _contenidos[], Reproduccion _reproducion)
+void MenuCargaLotes(
+    Genero _generos[],
+    Contenido _contenidos[],
+    Reproduccion _reproduccion,
+    Suscriptor _suscriptores[],
+    Reporte1ContMasRep _reporte1ContMasRep[],
+    int reproduccionesPorPlan[],
+    int totalDeReproducciones)
 {
     int opcion;
     do
-    { system("cls");
-        cout << "|========|=================================|" << endl;
-        cout << "| Opcion |           Descripcion           |" << endl;
-        cout << "|========|=================================|" << endl;
-        cout << "|    1   | Cargar lote de generos          |" << endl;
-        cout << "|--------|---------------------------------|" << endl;
-        cout << "|    2   | Cargar lote de contenidos       |" << endl;
-        cout << "|--------|---------------------------------|" << endl;
-        cout << "|    3   | Cargar lote de suscriptores     |" << endl;
-        cout << "|--------|---------------------------------|" << endl;
-        cout << "|    4   | Cargar lote de reproducciones   |" << endl;
-        cout << "|--------|---------------------------------|" << endl;
-        cout << "|    5   | Mostrar reportes                |" << endl;
-        cout << "|--------|---------------------------------|" << endl;
-        cout << "|    0   | Atras                           |" << endl;
-        cout << "|========|=================================|" << endl;
-        cout << "  Opcion: ";
+    {
+        system("color 0C"); // Color rojo UTNFlix
+        system("cls");      // Limpiamos pantalla
+
+        Logo(2);
+        cout << R"(
+        |========|=================================================|
+        | Opcion |           Descripcion                           |
+        |========|=================================================|
+        |    1   | Cargar lote de generos                          |
+        |--------|-------------------------------------------------|
+        |    2   | Cargar lote de contenidos                       |
+        |--------|-------------------------------------------------|
+        |    3   | Cargar lote de suscriptores                     |
+        |--------|-------------------------------------------------|
+        |    4   | Cargar lote de reproducciones                   |
+        |--------|-------------------------------------------------|
+        |    5   | Mostrar reportes                                |
+        |--------|-------------------------------------------------|
+        |    0   | Atras                                           |
+        |========|=================================================|
+          Opcion: )";
         cin >> opcion;
-        system("cls");
+        system("cls"); // Limpiamos nuevamente al procesar la opción
+
         if(opcion >= 1 && opcion <= 5)
         {
-            SelecMenuCargaLotes(opcion,_contenidos, _reproducion);
+            SelecMenuCargaLotes(
+                opcion,
+                _generos,
+                _contenidos,
+                _reproduccion,
+                _suscriptores,
+                _reporte1ContMasRep,
+                reproduccionesPorPlan,
+                totalDeReproducciones
+            );
         }
 
     }
@@ -119,26 +146,182 @@ void MenuCargaLotes(Contenido _contenidos[], Reproduccion _reproducion)
 
 }
 
-void SelecMenuCargaLotes(int opcion, Contenido _contenidos[],Reproduccion _reproducion)
+void SelecMenuCargaLotes(
+    int opcion,
+    Genero _generos[],
+    Contenido _contenidos[],
+    Reproduccion _reproduccion,
+    Suscriptor _suscriptores[],
+    Reporte1ContMasRep _reporte1ContMasRep[],
+    int reproduccionesPorPlan[],
+    int totalDeReproducciones
+)
 {
     switch(opcion)
     {
-    case 1: CargaLoteGenero();
+    case 1:
+        CargaLoteGenero(_generos);
         break;
-    case 2:CargaLoteContenido(_contenidos);
+    case 2:
+        CargaLoteContenido(_generos,_contenidos);
         break;
-    case 3:CargaLoteSuscriptores();
+    case 3:
+        CargaLoteSuscriptores(_suscriptores);
         break;
-    case 4: CargaLoteReproducciones(_reproducion,_contenidos);
+    case 4:
+        CargaLoteReproducciones(_generos,_reproduccion,_contenidos, _suscriptores,_reporte1ContMasRep, reproduccionesPorPlan, totalDeReproducciones);
         break;
-    case 5: //va a llamar a los diferentes reportes
+    case 5:
+        MenuReportes(
+            _generos,
+            _contenidos,
+            _reproduccion,
+            _suscriptores,
+            _reporte1ContMasRep,
+            reproduccionesPorPlan,
+            totalDeReproducciones);
         break;
     case 0:
-        MenuPrincipal(_contenidos, _reproducion);
+        MenuPrincipal(_generos,_contenidos, _reproduccion, _suscriptores,_reporte1ContMasRep,reproduccionesPorPlan, totalDeReproducciones);
         break;
     }
 
 
 }
 
+void MenuReportes(
+    Genero _generos[],
+    Contenido _contenidos[],
+    Reproduccion _reproduccion,
+    Suscriptor _suscriptores[],
+    Reporte1ContMasRep _reporte1ContMasRep[],
+    int reproduccionesPorPlan[],
+    int totalDeReproducciones)
+{
+    int opcion;
+    do
+    {
+        system("color 0C"); // Color rojo UTNFlix
+        system("cls");      // Limpiamos pantalla
+
+        Logo(2);
+        cout << R"(
+        |========|=================================================|
+        | Opcion |           Descripcion                           |
+        |========|=================================================|
+        |    1   |Ranking de contenidos más reproducidos           |
+        |--------|-------------------------------------------------|
+        |    2   |Actividad por plan de suscripción                |
+        |--------|-------------------------------------------------|
+        |    3   |Reproducciones por género y día de la semana     |
+        |--------|-------------------------------------------------|
+        |    4   |Contenidos sin reproducciones                    |
+        |--------|-------------------------------------------------|
+        |    5   |Top 5 suscriptores + sorteo de acceso anticipado |
+        |--------|-------------------------------------------------|
+        |    0   | Volver al menú principal                        |
+        |========|=================================================|
+          Opcion: )";
+        cin >> opcion;
+        system("cls"); // Limpiamos nuevamente al procesar la opción
+
+        if(opcion >= 1 && opcion <= 5)
+        {
+            SelecMenuReportes(
+                opcion,
+                _generos,
+                _contenidos,
+                _reproduccion,
+                _suscriptores,
+                _reporte1ContMasRep,
+                reproduccionesPorPlan,
+                totalDeReproducciones
+            );
+        }
+
+    }
+    while(opcion != 0);
+
+}
+
+void SelecMenuReportes(
+    int opcion,
+    Genero _generos[],
+    Contenido _contenidos[],
+    Reproduccion _reproduccion,
+    Suscriptor _suscriptores[],
+    Reporte1ContMasRep _reporte1ContMasRep[],
+    int reproduccionesPorPlan[],
+    int totalDeReproducciones
+)
+{
+    switch(opcion)
+    {
+    case 1:
+        OrdenarReporte( _reporte1ContMasRep);
+        break;
+    case 2:
+        MostrarReportePlanDeSuscripcion(reproduccionesPorPlan, totalDeReproducciones);
+        break;
+    case 3:
+        break;
+    case 4:
+        break;
+    case 5:
+        break;
+    case 0:
+        MenuCargaLotes(_generos,_contenidos, _reproduccion, _suscriptores,_reporte1ContMasRep,reproduccionesPorPlan, totalDeReproducciones);
+        break;
+    }
+
+
+}
+
+void Logo(int numTABULACIONES)
+{
+    switch(numTABULACIONES)
+    {
+    case 2:
+        cout << R"(
+        |==========================================================|
+        |                                                          |
+        |            | | | |_   _| \ | |  ___| (_)                 |
+        |            | | | | | | |  \| | |_  | |_ _  __            |
+        |            | | | | | | | |\  |  _| | | \ \/ /            |
+        |            | |_| | | | | | \ | |   | | |>  <             |
+        |             \___/  |_| |_| \_\_|   |_|_/_/\_\            |
+        |                                                          |
+        |==========================================================|
+        )";
+        break;
+    case 3:
+        cout << R"(
+            |==========================================================|
+            |                                                          |
+            |            | | | |_   _| \ | |  ___| (_)                 |
+            |            | | | | | | |  \| | |_  | |_ _  __            |
+            |            | | | | | | | |\  |  _| | | \ \/ /            |
+            |            | |_| | | | | | \ | |   | | |>  <             |
+            |             \___/  |_| |_| \_\_|   |_|_/_/\_\            |
+            |                                                          |
+            |==========================================================|
+            )";
+        break;
+    case 4:
+        cout << R"(
+                |==========================================================|
+                |                                                          |
+                |            | | | |_   _| \ | |  ___| (_)                 |
+                |            | | | | | | |  \| | |_  | |_ _  __            |
+                |            | | | | | | | |\  |  _| | | \ \/ /            |
+                |            | |_| | | | | | \ | |   | | |>  <             |
+                |             \___/  |_| |_| \_\_|   |_|_/_/\_\            |
+                |                                                          |
+                |==========================================================|
+                )";
+        break;
+
+    }
+
+}
 

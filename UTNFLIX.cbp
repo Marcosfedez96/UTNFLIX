@@ -32,7 +32,10 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="CargasDeLotes.cpp" />
+		<Unit filename="CargaLoteContenido.cpp" />
+		<Unit filename="CargaLoteGenero.cpp" />
+		<Unit filename="CargaLoteSuscriptores.cpp" />
+		<Unit filename="CargaLotesReproducciones.cpp" />
 		<Unit filename="Funciones.h">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
