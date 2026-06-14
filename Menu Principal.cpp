@@ -258,7 +258,7 @@ void SelecMenuReportes(
     switch(opcion)
     {
     case 1:
-        OrdenarReporte( _reporte1ContMasRep);
+        RegistrarTodosLosContenidos(_generos,_contenidos,_reporte1ContMasRep);
         break;
     case 2:
         MostrarReportePlanDeSuscripcion(reproduccionesPorPlan, totalDeReproducciones);

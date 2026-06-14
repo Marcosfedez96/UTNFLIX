@@ -12,8 +12,8 @@ struct Reporte1ContMasRep
     string tipo;
     string genero;
     int candRepTotales;
-    float porcRepComp;
-    int totalComLaRep;
+    float porcRepComp = 0;
+    int totalComLaRep = 0;
 };
 struct Genero
 {
@@ -77,9 +77,13 @@ void CargaLoteSuscriptores(Suscriptor _suscriptores[]);
 void MostrarCreditos();
 
 /// Reporte 1 ////
-void RankingContMasRep (Genero _generos[],Contenido _contenidos[],Reproduccion _reproducciones,Reporte1ContMasRep _reporte1ContMasRep[],int posCodCont );
+void RegistrarRankingContMasRep (Genero _generos[],Contenido _contenidos[],Reproduccion _reproducciones,Reporte1ContMasRep _reporte1ContMasRep[],int posCodCont );
 void OrdenarReporte(Reporte1ContMasRep _reporte1ContMasRep[]);
 void MostrarReporteContenidoMasReproduciodo(Reporte1ContMasRep _reporte1ContMasRep[]);
+void AsignarTipo(Contenido _contenidos[],Reporte1ContMasRep _reporte1ContMasRep[],int posCodCont);
+void AsignarGenero(Genero _generos[],Contenido _contenidos[],Reporte1ContMasRep _reporte1ContMasRep[],int posCodCont);
+
+void RegistrarTodosLosContenidos(Genero _generos[],Contenido _contenidos[],Reporte1ContMasRep _reporte1ContMasRep[]);
 
 
 //void SelecMenuCargaLotes(int opcion, Contenido _contenidos[],Reproduccion _reproducion, Suscriptor _suscriptores[]);

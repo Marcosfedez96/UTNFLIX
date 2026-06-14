@@ -193,18 +193,18 @@
 	"Funciones.h"
 	<stdio.h>
 
-1780860289 d:\tup programacion1\utnflix\funciones.h
+1781285054 d:\tup programacion1\utnflix\funciones.h
 	<string>
 
-1780859981 source:d:\tup programacion1\utnflix\main.cpp
+1781135229 source:d:\tup programacion1\utnflix\main.cpp
 	<iostream>
 	"Funciones.h"
 
-1780860297 source:d:\tup programacion1\utnflix\menu principal.cpp
+1781284632 source:d:\tup programacion1\utnflix\menu principal.cpp
 	<iostream>
 	"Funciones.h"
 
-1780267471 source:d:\tup programacion1\utnflix\repactporplansuscripcion.cpp
+1781126581 source:d:\tup programacion1\utnflix\repactporplansuscripcion.cpp
 	<iostream>
 	"Funciones.h"
 
@@ -212,7 +212,7 @@
 	<iostream>
 	"Funciones.h"
 
-1780267471 source:d:\tup programacion1\utnflix\reprankingcontmasrep.cpp
+1781301245 source:d:\tup programacion1\utnflix\reprankingcontmasrep.cpp
 	<iostream>
 	"Funciones.h"
 
@@ -404,6 +404,26 @@
 	<stdio.h>
 
 1781141212 source:d:\tup programacion1\utnflix v0.1.0\cargalotesuscriptores.cpp
+	<iostream>
+	"Funciones.h"
+	<stdio.h>
+
+1781283494 source:d:\tup programacion1\utnflix\cargalotecontenido.cpp
+	<iostream>
+	"Funciones.h"
+	<stdio.h>
+
+1781148312 source:d:\tup programacion1\utnflix\cargalotegenero.cpp
+	<iostream>
+	"Funciones.h"
+	<stdio.h>
+
+1781305514 source:d:\tup programacion1\utnflix\cargalotesreproducciones.cpp
+	<iostream>
+	"Funciones.h"
+	<stdio.h>
+
+1781141212 source:d:\tup programacion1\utnflix\cargalotesuscriptores.cpp
 	<iostream>
 	"Funciones.h"
 	<stdio.h>

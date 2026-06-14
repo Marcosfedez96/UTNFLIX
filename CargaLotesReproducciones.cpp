@@ -86,6 +86,7 @@ void CargaLoteReproducciones(
                         suscriptorExiste=true; // Encontramos el contenido
                         // REPORTE 2
                         posicionSuscriptor=x;
+                        ProcesarReproduccionPorPlan(_suscriptores[x].plan,reproduccionesPorPlan,totalDeReproducciones);
                     }
                 }
                 if(suscriptorExiste)
@@ -94,6 +95,7 @@ void CargaLoteReproducciones(
                     /// Reporte 2 ///
                     char plan = _suscriptores[posicionSuscriptor].plan;
                     ProcesarReproduccionPorPlan(plan, reproduccionesPorPlan, totalDeReproducciones);
+
                     /// Reporte 2 ///
                 }
                 else
@@ -160,7 +162,8 @@ void CargaLoteReproducciones(
             /// |=========================================|
             /// |  DESDE ACA LLAMAR A TODOS LOS REPORTES  |
             /// |=========================================|
-            RankingContMasRep (_generos,_contenidos,_reproduccion,_reporte1ContMasRep,posCodCont);
+
+            RegistrarRankingContMasRep (_generos,_contenidos,_reproduccion,_reporte1ContMasRep,posCodCont);
         }
     }
     while(_reproduccion.nroRep != 0); // Si ingresó 0, cortamos el lote
