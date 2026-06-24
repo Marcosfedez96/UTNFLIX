@@ -3,29 +3,31 @@
 #include <stdio.h>
 using namespace std;
 
-void CargaLoteContenido(
-    Condiciones &_condiciones,
-    Genero _generos[],
-    Contenido _contenidos[],
-    Reproduccion _reproduccion,
-    Suscriptor _suscriptores[],
-    Reporte1ContMasRep _reporte1ContMasRep[],
-    Reporte4 _reporte4CantSinRep[],
-    int reproduccionesPorPlan[],
-    int &totalDeReproducciones,
-    int matrizGenYDia[][7]  )
+void CargaLoteContenido(Condiciones &_condiciones,Genero _generos[], Contenido _contenidos[])
 {
+    _condiciones.seCargoContenidos = true;
+
+    bool errorValidacionGenero = false;
     for(int x = 0 ; x < 15 ; x++)
     {
+        if(!errorValidacionGenero)
+        {
+            CargarCod(_contenidos,x);
+            CargarNombre(_contenidos,x);
+            CargarTipo(_contenidos,x);
+            CargarDuracion(_contenidos,x);
+            CargarCalificaionProm(_contenidos,x);
+            errorValidacionGenero = CargarGeneros(_generos,_contenidos,x);
+            if(errorValidacionGenero)
+            {
+                ReiniciarContenidos(_contenidos);
 
-        CargarCod(_contenidos,x);
-        CargarNombre(_contenidos,x);
-        CargarTipo(_contenidos,x);
-        CargarDuracion(_contenidos,x);
-        CargarCalificaionProm(_contenidos,x);
-        CargarGeneros(_condiciones,_generos,_contenidos,_reproduccion,_suscriptores,_reporte1ContMasRep,_reporte4CantSinRep,reproduccionesPorPlan, totalDeReproducciones,matrizGenYDia,x);
+                _condiciones.seCargoContenidos = false;
+            }
+        }
+
     }
-    _condiciones.seCargoContenidos = true;
+
 }
 void CargarCod(Contenido _contenidos[], int x)
 {
@@ -178,18 +180,10 @@ void CargarCalificaionProm(Contenido _contenidos[],int x)
 
 }
 
-void CargarGeneros(Condiciones &_condiciones,
-    Genero _generos[],
-    Contenido _contenidos[],
-    Reproduccion _reproduccion,
-    Suscriptor _suscriptores[],
-    Reporte1ContMasRep _reporte1ContMasRep[],
-    Reporte4 _reporte4CantSinRep[],
-    int reproduccionesPorPlan[],
-    int &totalDeReproducciones,
-    int matrizGenYDia[][7] ,int x){
+bool CargarGeneros(Genero _generos[],Contenido _contenidos[],int _indice)
+{
 
-    bool generoExiste;
+
     Genero generosDisponibles[8];
     Genero generosDisponiblesAux;
     int contGenerosCargados=0;
@@ -223,7 +217,7 @@ void CargarGeneros(Condiciones &_condiciones,
     }
     do
     {
-        generoExiste = false;
+
         Logo(3);
         cout << R"(
             |==========================================================|
@@ -250,25 +244,23 @@ void CargarGeneros(Condiciones &_condiciones,
             system("color 4");
             system("pause");
         }
-        for( int i = 0 ; i < CANTGENEROS ; i++ )
+        for( int i = 0 ; i < 8 ; i++ )
         {
 
             if(_generos[i].cod == opcion)
             {
-                _contenidos[x].codGenero = opcion;
-                generoExiste=true;
+                _contenidos[_indice].codGenero = opcion;
+                system("cls");
+                return false;
             }
         }
 
-        if(!generoExiste)
-        {
-            ReiniciarContenidos(_contenidos);
-            MenuCargaLotes(_condiciones,_generos,_contenidos,_reproduccion,_suscriptores,_reporte1ContMasRep,_reporte4CantSinRep,reproduccionesPorPlan, totalDeReproducciones,matrizGenYDia);
-            system("pause");
-        }
+
         system("cls");
+        return true;
+
     }
-    while((_contenidos[x].codGenero < 1 || _contenidos[x].codGenero > 8) && !generoExiste );
+    while((_contenidos[_indice].codGenero < 1 || _contenidos[_indice].codGenero > 8) );
 }
 void ReiniciarContenidos(Contenido _contenidos[])
 {

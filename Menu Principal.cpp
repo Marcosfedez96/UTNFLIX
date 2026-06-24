@@ -170,7 +170,7 @@ void SelecMenuCargaLotes(
     Reproduccion _reproduccion,
     Suscriptor _suscriptores[],
     Reporte1ContMasRep _reporte1ContMasRep[],
-    Reporte4 _reporte4CantSinRep[],
+    Reporte4 _sinReproducciones[],
     int reproduccionesPorPlan[],
     int &totalDeReproducciones,
     int matrizGenYDia[][7]
@@ -184,7 +184,7 @@ void SelecMenuCargaLotes(
     case 2:
         if(_condiciones.seCargoGeneros)
         {
-            CargaLoteContenido(_condiciones,_generos,_contenidos,_reproduccion,_suscriptores,_reporte1ContMasRep,_reporte4CantSinRep,reproduccionesPorPlan, totalDeReproducciones,matrizGenYDia);
+            CargaLoteContenido(_condiciones,_generos,_contenidos);
 
         }
         else
@@ -194,7 +194,7 @@ void SelecMenuCargaLotes(
         }
         break;
     case 3:
-        if(_condiciones.seCargoGeneros)
+        if(_condiciones.seCargoContenidos)
         {
             CargaLoteSuscriptores(_condiciones,_suscriptores);
 
@@ -210,6 +210,7 @@ void SelecMenuCargaLotes(
         if(_condiciones.seCargoSuscriptores)
         {
             CargaLoteReproducciones(
+                _condiciones,
                 _generos,
                 _reproduccion,
                 _contenidos,
@@ -228,7 +229,7 @@ void SelecMenuCargaLotes(
 
         break;
     case 5:
-        if(_condiciones.seCargoSuscriptores)
+        if(_condiciones.seCargoReproducciones)
         {
             MenuReportes(
                 _condiciones,
@@ -237,7 +238,7 @@ void SelecMenuCargaLotes(
                 _reproduccion,
                 _suscriptores,
                 _reporte1ContMasRep,
-                _reporte4CantSinRep,
+                _sinReproducciones,
                 reproduccionesPorPlan,
                 totalDeReproducciones,
                 matrizGenYDia
@@ -257,7 +258,7 @@ void SelecMenuCargaLotes(
             _reproduccion,
             _suscriptores,
             _reporte1ContMasRep,
-            _reporte4CantSinRep,
+            _sinReproducciones,
             reproduccionesPorPlan,
             totalDeReproducciones,
             matrizGenYDia

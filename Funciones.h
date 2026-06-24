@@ -83,6 +83,7 @@ struct Condiciones
     bool seCargoGeneros = false;
     bool seCargoContenidos = false;
     bool seCargoSuscriptores = false;
+    bool seCargoReproducciones = false;
 };
 
 ///////////////////////
@@ -102,7 +103,6 @@ void MenuPrincipal(
 );
 void SelecMenuPrincipal(
     Condiciones &_condiciones,
-
     int opcion,
     Genero _generos[],
     Contenido _contenidos[],
@@ -154,7 +154,6 @@ void MenuReportes(
 void SelecMenuReportes(
     int opcion,
     Condiciones &_condiciones,
-
     Genero _generos[],
     Contenido _contenidos[],
     Reproduccion _reproduccion,
@@ -171,37 +170,20 @@ void SelecMenuReportes(
 ////////////////////
 void CargaLoteGenero(Condiciones &_condiciones,Genero _generos[]);
 ///---------------------------------------------------------------
-void CargaLoteContenido(
-    Condiciones &_condiciones,
-    Genero _generos[],
-    Contenido _contenidos[],
-    Reproduccion _reproduccion,
-    Suscriptor _suscriptores[],
-    Reporte1ContMasRep _reporte1ContMasRep[],
-    Reporte4 _reporte4CantSinRep[],
-    int reproduccionesPorPlan[],
-    int &totalDeReproducciones,
-    int matrizGenYDia[][7]  );
+void CargaLoteContenido(Condiciones &_condiciones,Genero _genero[],Contenido _contenidos[]);
 void CargarCod(Contenido _contenidos[],int x);
 void CargarNombre(Contenido _contenidos[],int x);
 void CargarTipo(Contenido _contenidos[], int x);
 void CargarDuracion(Contenido _contenidos[],int x);
 void CargarCalificaionProm(Contenido _contenidos[],int x);
-void CargarGeneros(Condiciones &_condiciones,
-                   Genero _generos[],
-                   Contenido _contenidos[],
-                   Reproduccion _reproduccion,
-                   Suscriptor _suscriptores[],
-                   Reporte1ContMasRep _reporte1ContMasRep[],
-                   Reporte4 _reporte4CantSinRep[],
-                   int reproduccionesPorPlan[],
-                   int &totalDeReproducciones,
-                   int matrizGenYDia[][7],int x);
+bool CargarGeneros(Genero _generos[],Contenido _contenidos[],int x);
 void ReiniciarContenidos(Contenido _contenidos[]);
+
 ///-----------------------------------------------------------------
 void CargaLoteSuscriptores(Condiciones &_condiciones,Suscriptor _suscriptores[]);
 ///-----------------------------------------------------------------
 void CargaLoteReproducciones(
+    Condiciones &_condiciones,
     Genero _generos[],
     Reproduccion _reproduccion,
     Contenido _contenidos[],

@@ -4,6 +4,7 @@
 using namespace std;
 
 void CargaLoteReproducciones(
+    Condiciones &_condiciones,
     Genero _generos[],
     Reproduccion   _reproduccion,
     Contenido      _contenidos[],
@@ -29,11 +30,10 @@ void CargaLoteReproducciones(
         Opcion: )";
         cin >> _reproduccion.nroRep;
         system("cls");
-
         // Validamos que el nro de reproducción sea distinto de 0 para procesar
         if(_reproduccion.nroRep != 0)
         {
-
+            _condiciones.seCargoReproducciones = true;
             bool suscriptorExiste = false;  // Flag para controlar que exista el suscriptor
             bool conExiste = false;         // Flag para controlar que exista el contenido
 

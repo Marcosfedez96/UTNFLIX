@@ -590,12 +590,12 @@
 	"Funciones.h"
 	<stdio.h>
 
-1782268805 source:c:\users\marco\downloads\utnflix v0.2.6\utnflix v0.2.6\cargalotecontenido.cpp
+1782271272 source:c:\users\marco\downloads\utnflix v0.2.6\utnflix v0.2.6\cargalotecontenido.cpp
 	<iostream>
 	"Funciones.h"
 	<stdio.h>
 
-1782268854 c:\users\marco\downloads\utnflix v0.2.6\utnflix v0.2.6\funciones.h
+1782273842 c:\users\marco\downloads\utnflix v0.2.6\utnflix v0.2.6\funciones.h
 	<string>
 
 1782265142 source:c:\users\marco\downloads\utnflix v0.2.6\utnflix v0.2.6\cargalotegenero.cpp
@@ -637,12 +637,12 @@
 	<ctime>
 	<cstdlib>
 
-1782264939 source:c:\users\marco\downloads\utnflix v0.2.6\utnflix v0.2.6\cargalotesreproducciones.cpp
+1782273800 source:c:\users\marco\downloads\utnflix v0.2.6\utnflix v0.2.6\cargalotesreproducciones.cpp
 	<iostream>
 	"Funciones.h"
 	<stdio.h>
 
-1782268925 source:c:\users\marco\downloads\utnflix v0.2.6\utnflix v0.2.6\menu principal.cpp
+1782273751 source:c:\users\marco\downloads\utnflix v0.2.6\utnflix v0.2.6\menu principal.cpp
 	<iostream>
 	"Funciones.h"
 
