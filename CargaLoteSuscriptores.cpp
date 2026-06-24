@@ -3,11 +3,11 @@
 #include <stdio.h>
 using namespace std;
 
-void CargaLoteSuscriptores(Suscriptor _suscriptores[])
+void CargaLoteSuscriptores(Condiciones &_condiciones,Suscriptor _suscriptores[])
 {
     // 1. Ciclo exacto FOR:
     // Usamos for dado que sabemos la cantidad exacta de suscriptores (12 en este caso).
-    for(int x=0; x<12; x++)
+    for(int x=0; x< CANTSUSCRIPTORES ; x++)
     {
         bool codSuscriptorRepetido;
         // 2. Ciclo inexacto de validacion para el código.
@@ -81,7 +81,8 @@ void CargaLoteSuscriptores(Suscriptor _suscriptores[])
               Opcion: )";
             cin >> _suscriptores[x].plan;
 
-            if(_suscriptores[x].plan != 'b' && _suscriptores[x].plan != 's' && _suscriptores[x].plan != 'p' )
+            if(_suscriptores[x].plan != 'B' && _suscriptores[x].plan != 'S' && _suscriptores[x].plan != 'P' &&
+               _suscriptores[x].plan != 'b' && _suscriptores[x].plan != 's' && _suscriptores[x].plan != 'p' )
             {
                 cout << "El plan seleccionado no es válido." << endl;
                 system("color 4");
@@ -89,7 +90,8 @@ void CargaLoteSuscriptores(Suscriptor _suscriptores[])
             }
             system("cls");
         }
-        while (_suscriptores[x].plan != 'b' && _suscriptores[x].plan != 's' && _suscriptores[x].plan != 'p' );
+        while (_suscriptores[x].plan != 'B' && _suscriptores[x].plan != 'S' && _suscriptores[x].plan != 'P' &&
+               _suscriptores[x].plan != 'b' && _suscriptores[x].plan != 's' && _suscriptores[x].plan != 'p' );
         Logo(3);
         do
         {
@@ -111,4 +113,5 @@ void CargaLoteSuscriptores(Suscriptor _suscriptores[])
         }
         while(_suscriptores[x].pantallas<1 || _suscriptores[x].pantallas>4);
     }
+    _condiciones.seCargoSuscriptores = true;
 }

@@ -428,3 +428,226 @@
 	"Funciones.h"
 	<stdio.h>
 
+1781283494 source:c:\users\gabriel\downloads\utnflix v0.2.3\utnflix v0.2.3\cargalotecontenido.cpp
+	<iostream>
+	"Funciones.h"
+	<stdio.h>
+
+1781795930 c:\users\gabriel\downloads\utnflix v0.2.3\utnflix v0.2.3\funciones.h
+	<string>
+
+1781148312 source:c:\users\gabriel\downloads\utnflix v0.2.3\utnflix v0.2.3\cargalotegenero.cpp
+	<iostream>
+	"Funciones.h"
+	<stdio.h>
+
+1781794782 source:c:\users\gabriel\downloads\utnflix v0.2.3\utnflix v0.2.3\cargalotesreproducciones.cpp
+	<iostream>
+	"Funciones.h"
+	<stdio.h>
+
+1781895041 source:c:\users\gabriel\downloads\utnflix v0.2.3\utnflix v0.2.3\cargalotesuscriptores.cpp
+	<iostream>
+	"Funciones.h"
+	<stdio.h>
+
+1781793265 source:c:\users\gabriel\downloads\utnflix v0.2.3\utnflix v0.2.3\menu principal.cpp
+	<iostream>
+	"Funciones.h"
+
+1781126581 source:c:\users\gabriel\downloads\utnflix v0.2.3\utnflix v0.2.3\repactporplansuscripcion.cpp
+	<iostream>
+	"Funciones.h"
+
+1780267471 source:c:\users\gabriel\downloads\utnflix v0.2.3\utnflix v0.2.3\repcontsinreprod.cpp
+	<iostream>
+	"Funciones.h"
+
+1781301245 source:c:\users\gabriel\downloads\utnflix v0.2.3\utnflix v0.2.3\reprankingcontmasrep.cpp
+	<iostream>
+	"Funciones.h"
+
+1781896136 source:c:\users\gabriel\downloads\utnflix v0.2.3\utnflix v0.2.3\reprepporgenydiasemana.cpp
+	<iostream>
+	"Funciones.h"
+
+1780267469 source:c:\users\gabriel\downloads\utnflix v0.2.3\utnflix v0.2.3\reptop5subssorteoaccesoant.cpp
+	<iostream>
+	"Funciones.h"
+
+1781795743 source:c:\users\gabriel\downloads\utnflix v0.2.3\utnflix v0.2.3\main.cpp
+	<iostream>
+	"Funciones.h"
+
+1781911970 source:d:\tup programacion1\utnflix v0.2.4\cargalotecontenido.cpp
+	<iostream>
+	"Funciones.h"
+	<stdio.h>
+
+1782011760 d:\tup programacion1\utnflix v0.2.4\funciones.h
+	<string>
+
+1781911970 source:d:\tup programacion1\utnflix v0.2.4\cargalotegenero.cpp
+	<iostream>
+	"Funciones.h"
+	<stdio.h>
+
+1782006424 source:d:\tup programacion1\utnflix v0.2.4\cargalotesreproducciones.cpp
+	<iostream>
+	"Funciones.h"
+	<stdio.h>
+
+1781911970 source:d:\tup programacion1\utnflix v0.2.4\cargalotesuscriptores.cpp
+	<iostream>
+	"Funciones.h"
+	<stdio.h>
+
+1782001016 source:d:\tup programacion1\utnflix v0.2.4\main.cpp
+	<iostream>
+	"Funciones.h"
+	<cstdlib>
+	<ctime>
+
+1782010495 source:d:\tup programacion1\utnflix v0.2.4\menu principal.cpp
+	<iostream>
+	"Funciones.h"
+
+1782005322 source:d:\tup programacion1\utnflix v0.2.4\repactporplansuscripcion.cpp
+	<iostream>
+	"Funciones.h"
+
+1780267471 source:d:\tup programacion1\utnflix v0.2.4\repcontsinreprod.cpp
+	<iostream>
+	"Funciones.h"
+
+1782012700 source:d:\tup programacion1\utnflix v0.2.4\reprankingcontmasrep.cpp
+	<iostream>
+	"Funciones.h"
+
+1782012400 source:d:\tup programacion1\utnflix v0.2.4\reprepporgenydiasemana.cpp
+	<iostream>
+	"Funciones.h"
+
+1782012669 source:d:\tup programacion1\utnflix v0.2.4\reptop5subssorteoaccesoant.cpp
+	<iostream>
+	"Funciones.h"
+	<ctime>
+	<cstdlib>
+
+1781911970 source:c:\users\braiko\documents\tup - utn\programación i\tpi - utnflix\utnflix v0.2.5\cargalotecontenido.cpp
+	<iostream>
+	"Funciones.h"
+	<stdio.h>
+
+1782178751 c:\users\braiko\documents\tup - utn\programación i\tpi - utnflix\utnflix v0.2.5\funciones.h
+	<string>
+
+1781911970 source:c:\users\braiko\documents\tup - utn\programación i\tpi - utnflix\utnflix v0.2.5\cargalotegenero.cpp
+	<iostream>
+	"Funciones.h"
+	<stdio.h>
+
+1782178778 source:c:\users\braiko\documents\tup - utn\programación i\tpi - utnflix\utnflix v0.2.5\cargalotesreproducciones.cpp
+	<iostream>
+	"Funciones.h"
+	<stdio.h>
+
+1781911970 source:c:\users\braiko\documents\tup - utn\programación i\tpi - utnflix\utnflix v0.2.5\cargalotesuscriptores.cpp
+	<iostream>
+	"Funciones.h"
+	<stdio.h>
+
+1782174581 source:c:\users\braiko\documents\tup - utn\programación i\tpi - utnflix\utnflix v0.2.5\main.cpp
+	<iostream>
+	"Funciones.h"
+	<cstdlib>
+	<ctime>
+
+1782179074 source:c:\users\braiko\documents\tup - utn\programación i\tpi - utnflix\utnflix v0.2.5\menu principal.cpp
+	<iostream>
+	"Funciones.h"
+
+1782005322 source:c:\users\braiko\documents\tup - utn\programación i\tpi - utnflix\utnflix v0.2.5\repactporplansuscripcion.cpp
+	<iostream>
+	"Funciones.h"
+
+1782012700 source:c:\users\braiko\documents\tup - utn\programación i\tpi - utnflix\utnflix v0.2.5\reprankingcontmasrep.cpp
+	<iostream>
+	"Funciones.h"
+
+1782012400 source:c:\users\braiko\documents\tup - utn\programación i\tpi - utnflix\utnflix v0.2.5\reprepporgenydiasemana.cpp
+	<iostream>
+	"Funciones.h"
+
+1782012669 source:c:\users\braiko\documents\tup - utn\programación i\tpi - utnflix\utnflix v0.2.5\reptop5subssorteoaccesoant.cpp
+	<iostream>
+	"Funciones.h"
+	<ctime>
+	<cstdlib>
+
+1782178957 source:c:\users\braiko\documents\tup - utn\programación i\tpi - utnflix\utnflix v0.2.5\repcontsinreprod.cpp
+	<iostream>
+	"Funciones.h"
+	<stdio.h>
+
+1782268805 source:c:\users\marco\downloads\utnflix v0.2.6\utnflix v0.2.6\cargalotecontenido.cpp
+	<iostream>
+	"Funciones.h"
+	<stdio.h>
+
+1782268854 c:\users\marco\downloads\utnflix v0.2.6\utnflix v0.2.6\funciones.h
+	<string>
+
+1782265142 source:c:\users\marco\downloads\utnflix v0.2.6\utnflix v0.2.6\cargalotegenero.cpp
+	<iostream>
+	"Funciones.h"
+	<stdio.h>
+
+1781911970 source:c:\users\marco\downloads\utnflix v0.2.6\utnflix v0.2.6\cargalotesuscriptores.cpp
+	<iostream>
+	"Funciones.h"
+	<stdio.h>
+
+1782174581 source:c:\users\marco\downloads\utnflix v0.2.6\utnflix v0.2.6\main.cpp
+	<iostream>
+	"Funciones.h"
+	<cstdlib>
+	<ctime>
+
+1782265281 source:c:\users\marco\downloads\utnflix v0.2.6\utnflix v0.2.6\repactporplansuscripcion.cpp
+	<iostream>
+	"Funciones.h"
+
+1782265654 source:c:\users\marco\downloads\utnflix v0.2.6\utnflix v0.2.6\repcontsinreprod.cpp
+	<iostream>
+	"Funciones.h"
+	<stdio.h>
+
+1782012700 source:c:\users\marco\downloads\utnflix v0.2.6\utnflix v0.2.6\reprankingcontmasrep.cpp
+	<iostream>
+	"Funciones.h"
+
+1782265307 source:c:\users\marco\downloads\utnflix v0.2.6\utnflix v0.2.6\reprepporgenydiasemana.cpp
+	<iostream>
+	"Funciones.h"
+
+1782012669 source:c:\users\marco\downloads\utnflix v0.2.6\utnflix v0.2.6\reptop5subssorteoaccesoant.cpp
+	<iostream>
+	"Funciones.h"
+	<ctime>
+	<cstdlib>
+
+1782264939 source:c:\users\marco\downloads\utnflix v0.2.6\utnflix v0.2.6\cargalotesreproducciones.cpp
+	<iostream>
+	"Funciones.h"
+	<stdio.h>
+
+1782268925 source:c:\users\marco\downloads\utnflix v0.2.6\utnflix v0.2.6\menu principal.cpp
+	<iostream>
+	"Funciones.h"
+
+1782266730 source:c:\users\marco\downloads\utnflix v0.2.6\utnflix v0.2.6\desafioadicional.cpp
+	<iostream>
+	<iomanip>
+	"Funciones.h"
+

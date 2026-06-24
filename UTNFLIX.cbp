@@ -36,6 +36,7 @@
 		<Unit filename="CargaLoteGenero.cpp" />
 		<Unit filename="CargaLoteSuscriptores.cpp" />
 		<Unit filename="CargaLotesReproducciones.cpp" />
+		<Unit filename="DesafioAdicional.cpp" />
 		<Unit filename="Funciones.h">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>

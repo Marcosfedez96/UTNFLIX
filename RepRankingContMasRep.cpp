@@ -94,16 +94,16 @@ void OrdenarReporte(Reporte1ContMasRep _reporte1ContMasRep[])
 void MostrarReporteContenidoMasReproduciodo(Reporte1ContMasRep _reporte1ContMasRep[])
 {
     int i= 1;
-    for(int x = 0; x < 15 ; x++)
+    for(int x = 0; x < CANTCONTENIDOS ; x++)
     {
         if(_reporte1ContMasRep[x].titulo != "")
         {
 
 
 
-            cout << "|========================|=================================|"<< endl;
+            cout << "|==========================================================|"<< endl;
             cout << "|             RANKING N° "<<  i << endl;
-            cout << "|========================|=================================|"<< endl;
+            cout << "|==========================================================|"<< endl;
             cout << "| Opcion                 |         Descripcion             |"<< endl;
             cout << "|========================|=================================|"<< endl;
             cout << "|  Cod. Contenido        | " << _reporte1ContMasRep[x].codCont << endl;

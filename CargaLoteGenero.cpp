@@ -5,7 +5,7 @@ using namespace std;
 
 //EN ESTE ARCHIVO VAMOS A CREAR TODAS LAS FUNCIONES QUE SEAN DE CARGA DE LOTES
 
-void CargaLoteGenero(Genero _generos[])
+void CargaLoteGenero(Condiciones &_condiciones,Genero _generos[])
 {
     const int CANTGENEROS = 8;
     bool repetido=false;
@@ -72,9 +72,28 @@ void CargaLoteGenero(Genero _generos[])
             getline(cin, _generos[x].nombre);
             system("cls");
         }
+
+        // Pedimos los 3 días destacados
+        system("color 0B");
+        cout << "\n|--- CONFIGURACION DE DIAS DESTACADOS (Desafio) ---|" << endl;
+        cout << "| Ingrese hasta 3 dias pico (1=Lun ... 7=Dom)      |" << endl;
+        cout << "| Ingrese 0 si el genero no tiene dia promocionado |" << endl;
+        cout << "|--------------------------------------------------|" << endl;
+
+        for(int i = 0; i < 3; i++) {
+            do {
+                cout << "  Dia destacado " << i + 1 << ": ";
+                cin >> _generos[x].diasDestacados[i];
+                if(_generos[x].diasDestacados[i] < 0 || _generos[x].diasDestacados[i] > 7) {
+                    cout << "  Error: Ingrese un dia entre 0 y 7." << endl;
+                }
+            }
+            while(_generos[x].diasDestacados[i] < 0 || _generos[x].diasDestacados[i] > 7);
+        }
     }
     system("color 0a");
     cout << "Se cargaron todos los datos correctamente!" << endl;
+    _condiciones.seCargoGeneros = true;
     cout << "Nos vemos en el Menú de Carga" << endl;
     cout << endl;
     //system("pause");

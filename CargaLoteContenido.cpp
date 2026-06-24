@@ -3,7 +3,17 @@
 #include <stdio.h>
 using namespace std;
 
-void CargaLoteContenido(Genero _generos[], Contenido _contenidos[])
+void CargaLoteContenido(
+    Condiciones &_condiciones,
+    Genero _generos[],
+    Contenido _contenidos[],
+    Reproduccion _reproduccion,
+    Suscriptor _suscriptores[],
+    Reporte1ContMasRep _reporte1ContMasRep[],
+    Reporte4 _reporte4CantSinRep[],
+    int reproduccionesPorPlan[],
+    int &totalDeReproducciones,
+    int matrizGenYDia[][7]  )
 {
     for(int x = 0 ; x < 15 ; x++)
     {
@@ -13,8 +23,9 @@ void CargaLoteContenido(Genero _generos[], Contenido _contenidos[])
         CargarTipo(_contenidos,x);
         CargarDuracion(_contenidos,x);
         CargarCalificaionProm(_contenidos,x);
-        CargarGeneros(_generos,_contenidos,x);
+        CargarGeneros(_condiciones,_generos,_contenidos,_reproduccion,_suscriptores,_reporte1ContMasRep,_reporte4CantSinRep,reproduccionesPorPlan, totalDeReproducciones,matrizGenYDia,x);
     }
+    _condiciones.seCargoContenidos = true;
 }
 void CargarCod(Contenido _contenidos[], int x)
 {
@@ -72,15 +83,20 @@ void CargarCod(Contenido _contenidos[], int x)
 }
 void CargarNombre(Contenido _contenidos[], int x)
 {
-    Logo(2);
-    cout << R"(
+    do
+    {
+        Logo(2);
+        cout << R"(
         |==========================================================|
         |             Ingrese el Nombre del contenido:             |
         |==========================================================|
         Opcion: )";
-    cin.ignore();
-    getline(cin, _contenidos[x].titulo);
-    system("cls");
+        cin.ignore();
+        getline(cin, _contenidos[x].titulo);
+        system("cls");
+    }
+    while(_contenidos[x].titulo == "");
+
 
 
 }
@@ -120,14 +136,19 @@ void CargarTipo(Contenido _contenidos[], int x)
 
 void CargarDuracion(Contenido _contenidos[],int x)
 {
-    Logo(2);
-    cout << R"(
+    do
+    {
+        Logo(2);
+        cout << R"(
         |==========================================================|
         |              Ingrese la Duración (minutos):              |
         |==========================================================|
         Opcion: )";
-    cin >> _contenidos[x].duracion;
-    system("cls");
+        cin >> _contenidos[x].duracion;
+        system("cls");
+
+    }
+    while(_contenidos[x].duracion == 0);
 
 }
 
@@ -157,8 +178,16 @@ void CargarCalificaionProm(Contenido _contenidos[],int x)
 
 }
 
-void CargarGeneros(Genero _generos[],Contenido _contenidos[],int x)
-{
+void CargarGeneros(Condiciones &_condiciones,
+    Genero _generos[],
+    Contenido _contenidos[],
+    Reproduccion _reproduccion,
+    Suscriptor _suscriptores[],
+    Reporte1ContMasRep _reporte1ContMasRep[],
+    Reporte4 _reporte4CantSinRep[],
+    int reproduccionesPorPlan[],
+    int &totalDeReproducciones,
+    int matrizGenYDia[][7] ,int x){
 
     bool generoExiste;
     Genero generosDisponibles[8];
@@ -221,7 +250,7 @@ void CargarGeneros(Genero _generos[],Contenido _contenidos[],int x)
             system("color 4");
             system("pause");
         }
-        for( int i = 0 ; i < 8 ; i++ )
+        for( int i = 0 ; i < CANTGENEROS ; i++ )
         {
 
             if(_generos[i].cod == opcion)
@@ -233,10 +262,30 @@ void CargarGeneros(Genero _generos[],Contenido _contenidos[],int x)
 
         if(!generoExiste)
         {
-            cout << "el genero ingresado no existe. ingrese otro:" << endl;
+            ReiniciarContenidos(_contenidos);
+            MenuCargaLotes(_condiciones,_generos,_contenidos,_reproduccion,_suscriptores,_reporte1ContMasRep,_reporte4CantSinRep,reproduccionesPorPlan, totalDeReproducciones,matrizGenYDia);
             system("pause");
         }
         system("cls");
     }
     while((_contenidos[x].codGenero < 1 || _contenidos[x].codGenero > 8) && !generoExiste );
+}
+void ReiniciarContenidos(Contenido _contenidos[])
+{
+    for(int x = 0 ; x < CANTCONTENIDOS ; x++)
+    {
+        //_contenidos = {};
+        _contenidos[x].califPromedio = 0;
+        _contenidos[x].CantReproducciones = 0;
+        _contenidos[x].codContenido = 0;
+        _contenidos[x].codGenero = 0;
+        _contenidos[x].duracion = 0;
+        _contenidos[x].tipo = ' ';
+        _contenidos[x].titulo = "";
+        _contenidos[x].totalComLaRep = 0;
+
+
+    }
+
+
 }

@@ -3,7 +3,6 @@
 #include <stdio.h>
 using namespace std;
 
-
 void CargaLoteReproducciones(
     Genero _generos[],
     Reproduccion   _reproduccion,
@@ -11,12 +10,13 @@ void CargaLoteReproducciones(
     Suscriptor     _suscriptores[],
     Reporte1ContMasRep _reporte1ContMasRep[],
     int            reproduccionesPorPlan[],
-    int            totalDeReproducciones
+    int            &totalDeReproducciones,
+    int matrizGenYDia[][7]  /// Reporte 3
+
 )
 {
     // Ciclo principal para cargar el lote.
     // Se repite mientras el usuario no ingrese 0 (la condición de salida).
-
     int posCodCont;
     do
     {
@@ -33,6 +33,7 @@ void CargaLoteReproducciones(
         // Validamos que el nro de reproducción sea distinto de 0 para procesar
         if(_reproduccion.nroRep != 0)
         {
+
             bool suscriptorExiste = false;  // Flag para controlar que exista el suscriptor
             bool conExiste = false;         // Flag para controlar que exista el contenido
 
@@ -86,7 +87,8 @@ void CargaLoteReproducciones(
                         suscriptorExiste=true; // Encontramos el contenido
                         // REPORTE 2
                         posicionSuscriptor=x;
-                        ProcesarReproduccionPorPlan(_suscriptores[x].plan,reproduccionesPorPlan,totalDeReproducciones);
+                        _suscriptores[x].canRepSub++;
+                        //ProcesarReproduccionPorPlan(_suscriptores[x].plan,reproduccionesPorPlan,totalDeReproducciones);
                     }
                 }
                 if(suscriptorExiste)
@@ -163,8 +165,22 @@ void CargaLoteReproducciones(
             /// |  DESDE ACA LLAMAR A TODOS LOS REPORTES  |
             /// |=========================================|
 
+            /// REPORTE 3
+            // Una vez uqe confirmamos que que ya tenemos todos los datos y que la reproduccion es
+            // valida y existe:
+
+            // Procesás tu nuevo reporte 3 (le pasamos tamaño de contenidos fijo en 15):
+            ProcesarReporteGenYDia(
+                                   _contenidos,
+                                   _generos,
+                                   _reproduccion,
+                                   matrizGenYDia
+                                   );
+            /// REPORTE 3
+            ProcesarDiaPico(_contenidos, _generos, _reproduccion);
             RegistrarRankingContMasRep (_generos,_contenidos,_reproduccion,_reporte1ContMasRep,posCodCont);
         }
+
     }
     while(_reproduccion.nroRep != 0); // Si ingresó 0, cortamos el lote
 

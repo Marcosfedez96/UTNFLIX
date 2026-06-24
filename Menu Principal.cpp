@@ -5,7 +5,18 @@ using namespace std;
 
 //EN ESTE ARCHIVO VAMOS A TENER TODO LO RELACIONADO A LOS MENUS INTERACTIVOS
 
-void MenuPrincipal(Genero _generos[],Contenido _contenidos[],Reproduccion _reproduccion, Suscriptor _suscriptores[],Reporte1ContMasRep _reporte1ContMasRep[],int reproduccionesPorPlan[],int totalDeReproducciones)
+void MenuPrincipal(
+    Condiciones &_condiciones,
+    Genero _generos[],
+    Contenido _contenidos[],
+    Reproduccion _reproduccion,
+    Suscriptor _suscriptores[],
+    Reporte1ContMasRep _reporte1ContMasRep[],
+    Reporte4 _sinReproducciones[],
+    int reproduccionesPorPlan[],
+    int &totalDeReproducciones,
+    int matrizGenYDia[][7]       /// Reporte 3
+)
 {
 
     int opcion;
@@ -30,20 +41,54 @@ void MenuPrincipal(Genero _generos[],Contenido _contenidos[],Reproduccion _repro
         system("cls");
         if(opcion >= 1 && opcion <= 3)
         {
-            SelecMenuPrincipal(opcion,_generos, _contenidos,_reproduccion, _suscriptores,_reporte1ContMasRep,reproduccionesPorPlan, totalDeReproducciones);
+            SelecMenuPrincipal(
+                _condiciones,
+                opcion,
+                _generos,
+                _contenidos,
+                _reproduccion,
+                _suscriptores,
+                _reporte1ContMasRep,
+                _sinReproducciones,
+                reproduccionesPorPlan,
+                totalDeReproducciones,
+                matrizGenYDia       /// Reporte 3
+            );
         }
 
     }
     while(opcion != 0);
 
 }
-void SelecMenuPrincipal(int opcion,Genero _generos[], Contenido _contenidos[],Reproduccion _reproduccion, Suscriptor _suscriptores[],Reporte1ContMasRep _reporte1ContMasRep[],int reproduccionesPorPlan[], int totalDeReproducciones)
+void SelecMenuPrincipal(
+    Condiciones &_condiciones,
+    int opcion,
+    Genero _generos[],
+    Contenido _contenidos[],
+    Reproduccion _reproduccion,
+    Suscriptor _suscriptores[],
+    Reporte1ContMasRep _reporte1ContMasRep[],
+    Reporte4 _sinReproducciones[],
+    int reproduccionesPorPlan[],
+    int &totalDeReproducciones,
+    int matrizGenYDia[][7]       /// Reporte 3
+)
 {
-
     switch(opcion)
     {
     case 1:
-        MenuCargaLotes(_generos,_contenidos, _reproduccion, _suscriptores,_reporte1ContMasRep, reproduccionesPorPlan, totalDeReproducciones);
+        MenuCargaLotes(
+            _condiciones,
+            _generos,
+            _contenidos,
+            _reproduccion,
+            _suscriptores,
+            _reporte1ContMasRep,
+            _sinReproducciones,
+            reproduccionesPorPlan,
+            totalDeReproducciones,
+            matrizGenYDia       /// Reporte 3
+        );
         break;
     case 2:
         MostrarCreditos();
@@ -51,54 +96,22 @@ void SelecMenuPrincipal(int opcion,Genero _generos[], Contenido _contenidos[],Re
     }
 
 }
-///----------------------------------------------------------------------
-///----------------------------------------------------------------------
-///----------------------------------------------------------------------
-void MostrarCreditos()
-{
 
-    int opcion;
-    do
-    {
-        system("color 0C");         // Color rojo UTNFlix
-        system("cls");      // Limpiar pantalla para aplicar el color
-        Logo(2);
-        cout << R"(
-        |========|=================================================|
-        | Legajo |                     Creditos                    |
-        |========|=================================================|
-        |  34851 | Barrionuevo, Gabriel                            |
-        |--------|-------------------------------------------------|
-        |  24448 | Fernandez, Marcos                               |
-        |--------|-------------------------------------------------|
-        |  35025 | Tejada, Brian                                   |
-        |========|=================================================|
-
-
-        |========|=================================================|
-        |    0   | Atras                                           |
-        |========|=================================================|
-          Opcion: )";
-
-        cin >> opcion;
-
-        system("color 0F"); // Volver al blanco y negro clásico
-        system("cls");      // Limpiar la pantalla para el próximo menú
-    }
-    while(opcion != 0);
-
-}
 ///----------------------------------------------------------------------
 ///----------------------------------------------------------------------
 ///----------------------------------------------------------------------
 void MenuCargaLotes(
+    Condiciones &_condiciones,
     Genero _generos[],
     Contenido _contenidos[],
     Reproduccion _reproduccion,
     Suscriptor _suscriptores[],
     Reporte1ContMasRep _reporte1ContMasRep[],
+    Reporte4 _sinReproducciones[],
     int reproduccionesPorPlan[],
-    int totalDeReproducciones)
+    int &totalDeReproducciones,
+    int matrizGenYDia[][7]
+)
 {
     int opcion;
     do
@@ -131,13 +144,16 @@ void MenuCargaLotes(
         {
             SelecMenuCargaLotes(
                 opcion,
+                _condiciones,
                 _generos,
                 _contenidos,
                 _reproduccion,
                 _suscriptores,
                 _reporte1ContMasRep,
+                _sinReproducciones,
                 reproduccionesPorPlan,
-                totalDeReproducciones
+                totalDeReproducciones,
+                matrizGenYDia       /// Reporte 3
             );
         }
 
@@ -148,41 +164,104 @@ void MenuCargaLotes(
 
 void SelecMenuCargaLotes(
     int opcion,
+    Condiciones &_condiciones,
     Genero _generos[],
     Contenido _contenidos[],
     Reproduccion _reproduccion,
     Suscriptor _suscriptores[],
     Reporte1ContMasRep _reporte1ContMasRep[],
+    Reporte4 _reporte4CantSinRep[],
     int reproduccionesPorPlan[],
-    int totalDeReproducciones
+    int &totalDeReproducciones,
+    int matrizGenYDia[][7]
 )
 {
     switch(opcion)
     {
     case 1:
-        CargaLoteGenero(_generos);
+        CargaLoteGenero(_condiciones,_generos);
         break;
     case 2:
-        CargaLoteContenido(_generos,_contenidos);
+        if(_condiciones.seCargoGeneros)
+        {
+            CargaLoteContenido(_condiciones,_generos,_contenidos,_reproduccion,_suscriptores,_reporte1ContMasRep,_reporte4CantSinRep,reproduccionesPorPlan, totalDeReproducciones,matrizGenYDia);
+
+        }
+        else
+        {
+            cout << endl << endl << ERROR_CONTENIDOS << endl << endl ;
+            system("Pause");
+        }
         break;
     case 3:
-        CargaLoteSuscriptores(_suscriptores);
+        if(_condiciones.seCargoGeneros)
+        {
+            CargaLoteSuscriptores(_condiciones,_suscriptores);
+
+        }
+        else
+        {
+            cout << endl << endl << ERROR_SUSCRIPTORES << endl << endl ;
+            system("Pause");
+
+        }
         break;
     case 4:
-        CargaLoteReproducciones(_generos,_reproduccion,_contenidos, _suscriptores,_reporte1ContMasRep, reproduccionesPorPlan, totalDeReproducciones);
+        if(_condiciones.seCargoSuscriptores)
+        {
+            CargaLoteReproducciones(
+                _generos,
+                _reproduccion,
+                _contenidos,
+                _suscriptores,
+                _reporte1ContMasRep,
+                reproduccionesPorPlan,
+                totalDeReproducciones,
+                matrizGenYDia
+            );
+        }
+        else
+        {
+            cout << endl << endl << ERROR_REPRODUCCIONES << endl << endl ;
+            system("Pause");
+        }
+
         break;
     case 5:
-        MenuReportes(
+        if(_condiciones.seCargoSuscriptores)
+        {
+            MenuReportes(
+                _condiciones,
+                _generos,
+                _contenidos,
+                _reproduccion,
+                _suscriptores,
+                _reporte1ContMasRep,
+                _reporte4CantSinRep,
+                reproduccionesPorPlan,
+                totalDeReproducciones,
+                matrizGenYDia
+            );
+        }
+        else
+        {
+            cout << endl << endl << ERROR_REPORTES << endl << endl ;
+            system("Pause");
+        }
+        break;
+    case 0:
+        MenuPrincipal(
+            _condiciones,
             _generos,
             _contenidos,
             _reproduccion,
             _suscriptores,
             _reporte1ContMasRep,
+            _reporte4CantSinRep,
             reproduccionesPorPlan,
-            totalDeReproducciones);
-        break;
-    case 0:
-        MenuPrincipal(_generos,_contenidos, _reproduccion, _suscriptores,_reporte1ContMasRep,reproduccionesPorPlan, totalDeReproducciones);
+            totalDeReproducciones,
+            matrizGenYDia
+        );
         break;
     }
 
@@ -190,20 +269,24 @@ void SelecMenuCargaLotes(
 }
 
 void MenuReportes(
+    Condiciones &_condiciones,
+
     Genero _generos[],
     Contenido _contenidos[],
     Reproduccion _reproduccion,
     Suscriptor _suscriptores[],
     Reporte1ContMasRep _reporte1ContMasRep[],
+    Reporte4 _sinReproducciones[],
     int reproduccionesPorPlan[],
-    int totalDeReproducciones)
+    int &totalDeReproducciones,
+    int matrizGenYDia[][7]
+)
 {
     int opcion;
     do
     {
         system("color 0C"); // Color rojo UTNFlix
         system("cls");      // Limpiamos pantalla
-
         Logo(2);
         cout << R"(
         |========|=================================================|
@@ -219,23 +302,29 @@ void MenuReportes(
         |--------|-------------------------------------------------|
         |    5   |Top 5 suscriptores + sorteo de acceso anticipado |
         |--------|-------------------------------------------------|
+        |    6   |Generos con dias destacados                      |
+        |--------|-------------------------------------------------|
         |    0   | Volver al menú principal                        |
         |========|=================================================|
           Opcion: )";
+
         cin >> opcion;
         system("cls"); // Limpiamos nuevamente al procesar la opción
 
-        if(opcion >= 1 && opcion <= 5)
+        if(opcion >= 1 && opcion <= 6)
         {
             SelecMenuReportes(
-                opcion,
+                opcion,                               _condiciones,
+
                 _generos,
                 _contenidos,
                 _reproduccion,
                 _suscriptores,
                 _reporte1ContMasRep,
+                _sinReproducciones,
                 reproduccionesPorPlan,
-                totalDeReproducciones
+                totalDeReproducciones,
+                matrizGenYDia
             );
         }
 
@@ -246,31 +335,54 @@ void MenuReportes(
 
 void SelecMenuReportes(
     int opcion,
+    Condiciones &_condiciones,
     Genero _generos[],
     Contenido _contenidos[],
     Reproduccion _reproduccion,
     Suscriptor _suscriptores[],
     Reporte1ContMasRep _reporte1ContMasRep[],
+    Reporte4 _sinReproducciones[],
     int reproduccionesPorPlan[],
-    int totalDeReproducciones
+    int &totalDeReproducciones,
+    int matrizGenYDia[][7]
 )
 {
     switch(opcion)
     {
     case 1:
-        RegistrarTodosLosContenidos(_generos,_contenidos,_reporte1ContMasRep);
+        RegistrarTodosLosContenidos(
+            _generos,
+            _contenidos,
+            _reporte1ContMasRep
+        );
         break;
     case 2:
         MostrarReportePlanDeSuscripcion(reproduccionesPorPlan, totalDeReproducciones);
         break;
     case 3:
+        MostrarReporteGeneroYDia(matrizGenYDia, _generos);       /// Reporte 3
         break;
     case 4:
+        CopiaContenido(_sinReproducciones, _contenidos, _generos);
         break;
     case 5:
+        TopFiveSub(_suscriptores);
+        break;
+    case 6:
+        MostrarReporteDiasPico(_generos);
         break;
     case 0:
-        MenuCargaLotes(_generos,_contenidos, _reproduccion, _suscriptores,_reporte1ContMasRep,reproduccionesPorPlan, totalDeReproducciones);
+        MenuCargaLotes(
+            _condiciones,
+            _generos,
+            _contenidos,
+            _reproduccion,
+            _suscriptores,
+            _reporte1ContMasRep,
+            _sinReproducciones,
+            reproduccionesPorPlan,
+            totalDeReproducciones,
+            matrizGenYDia);
         break;
     }
 
@@ -325,3 +437,40 @@ void Logo(int numTABULACIONES)
 
 }
 
+///----------------------------------------------------------------------
+///----------------------------------------------------------------------
+///----------------------------------------------------------------------
+void MostrarCreditos()
+{
+
+    int opcion;
+    do
+    {
+        system("color 0C");         // Color rojo UTNFlix
+        system("cls");      // Limpiar pantalla para aplicar el color
+        Logo(2);
+        cout << R"(
+        |========|=================================================|
+        | Legajo |                     Creditos                    |
+        |========|=================================================|
+        |  34851 | Barrionuevo, Gabriel                            |
+        |--------|-------------------------------------------------|
+        |  24498 | Fernandez, Marcos                               |
+        |--------|-------------------------------------------------|
+        |  35025 | Tejada, Brian                                   |
+        |========|=================================================|
+
+
+        |========|=================================================|
+        |    0   | Atras                                           |
+        |========|=================================================|
+          Opcion: )";
+
+        cin >> opcion;
+
+        system("color 0F"); // Volver al blanco y negro clásico
+        system("cls");      // Limpiar la pantalla para el próximo menú
+    }
+    while(opcion != 0);
+
+}
